@@ -186,3 +186,5 @@ const OverviewTab = ({ data }) => {
       </div>
     </div>
   );
+};
+export defalt Overviewtab;
