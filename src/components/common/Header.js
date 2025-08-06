@@ -74,4 +74,6 @@ const Header = ({ selectedPeriod, onPeriodChange }) => {
         </div>
       </div>
     </header>
+  );
+};
 export default Header;
