@@ -1,1 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Cores personalizadas PROTEQ */
+.text-proteq-blue {
+  color: #1e5091;
+}
+
+.text-proteq-green {
+  color: #8bc34a;
+}
+
+.bg-proteq-blue {
+  background-color: #1e5091;
+}
+
+.bg-proteq-green {
+  background-color: #8bc34a;
+}
+
+.border-proteq-blue {
+  border-color: #1e5091;
+}
+
+.border-proteq-green {
+  border-color: #8bc34a;
+}
+
+/* Animações personalizadas */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilização dos gráficos */
+.recharts-tooltip-wrapper {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+  .mobile-scroll {
+    overflow-x: auto;
+  }
+  
+  .mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
