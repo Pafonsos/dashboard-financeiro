@@ -2,36 +2,36 @@ import React from 'react';
 
 const Logo = ({ size = 'default' }) => {
   const sizeClasses = {
-    small: 'w-6 h-6',
-    default: 'w-8 h-8',
-    large: 'w-12 h-12'
-  };
-
-  const textSizeClasses = {
-    small: 'text-lg',
-    default: 'text-xl',
-    large: 'text-3xl'
-  };
-
-  const dotSizeClasses = {
-    small: { dot: 'w-1 h-1', leaf: 'w-2 h-1.5' },
-    default: { dot: 'w-1.5 h-1.5', leaf: 'w-3 h-2' },
-    large: { dot: 'w-2 h-2', leaf: 'w-4 h-3' }
+    small: 'h-6',
+    default: 'h-8',
+    large: 'h-12'
   };
 
   return (
     <div className="flex items-center space-x-2">
-      <div className="relative">
-        <div className={`${sizeClasses[size]} rounded-full border-3 border-proteq-blue flex items-center justify-center bg-white`}>
-          <div className="flex items-center">
-            <div className={`${dotSizeClasses[size].dot} bg-blue-400 rounded-sm mr-0.5`}></div>
-            <div className={`${dotSizeClasses[size].leaf} bg-proteq-green rounded-full transform rotate-12`}></div>
+      <img 
+        src="/logo-proteq.png" 
+        alt="PROTEQ Logo" 
+        className={`${sizeClasses[size]} w-auto object-contain`}
+        onError={(e) => {
+          // Fallback para o logo SVG original se a imagem não carregar
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+      
+      {/* Fallback - Logo SVG original */}
+      <div className="hidden items-center space-x-2">
+        <div className="relative">
+          <div className={`w-8 h-8 rounded-full border-3 border-proteq-blue flex items-center justify-center bg-white`}>
+            <div className="flex items-center">
+              <div className="w-1.5 h-1.5 bg-blue-400 rounded-sm mr-0.5"></div>
+              <div className="w-3 h-2 bg-proteq-green rounded-full transform rotate-12"></div>
+            </div>
           </div>
         </div>
+        <span className="text-xl font-bold text-proteq-blue">PROTEQ</span>
       </div>
-      <span className={`${textSizeClasses[size]} font-bold text-proteq-blue`}>
-        PROTEQ
-      </span>
     </div>
   );
 };
